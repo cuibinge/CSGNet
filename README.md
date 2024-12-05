@@ -7,7 +7,7 @@ torch: 1.11.0 <br>
 <br>
 Python: 3.8.10 <br>
 <br>
-cleanlab: 1.0 <br>
+Cleanlab: 1.0 <br>
 # Dataset
 You can download the hyperspectral datasets in mat format at: https://pan.baidu.com/s/1_bxki_0UzUrhhLKdP2E3-Q?pwd=g88n, and move the files to ./datasets folder. <br>
 An example dataset folder has the following structure: <br>
