@@ -15,6 +15,7 @@ class SelfAttentionBlock(nn.Module):
             num_convs=key_query_num_convs,
             use_norm=key_query_norm,
         )
+
         # query project
         if share_key_query:
             assert key_in_channels == query_in_channels
@@ -26,6 +27,7 @@ class SelfAttentionBlock(nn.Module):
                 num_convs=key_query_num_convs,
                 use_norm=key_query_norm,
             )
+            
         # value project
         self.value_project = self.buildproject(
             in_channels=key_in_channels,
