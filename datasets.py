@@ -24,8 +24,6 @@ import scipy.io as sio
 import matplotlib.pyplot as plt
 import random
 
-global_list = []
-
 DATASETS_CONFIG = {
     'Houston13': {
         'img': 'Houston13.mat',
