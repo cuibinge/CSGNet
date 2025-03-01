@@ -1,10 +1,8 @@
-
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from collections import OrderedDict
-from datasets import global_list
 
 from memory import FeaturesMemory
 
@@ -135,7 +133,7 @@ class Transformer(nn.Module):
     def forward(self, x: torch.Tensor):
         return self.resblocks(x)
 
-class LDGnet(nn.Module):
+class CSGnet(nn.Module):
     def __init__(self,
                  embed_dim: int,
                  # vision
@@ -227,8 +225,6 @@ class LDGnet(nn.Module):
         imgage_class_features, image_features = self.encode_image(image, mode='train')
 
         if self.training:
-
-            global_list.append(float(self.logit_scale.cpu()))
             bs = len(label)
 
             text_features = self.encode_text(text)
