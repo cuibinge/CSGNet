@@ -47,13 +47,13 @@ class D_Res_3d_CNN(nn.Module):
         self.patch_size = patch_size
         # self.final_feat_dim = 128
 
-        # self.memory_module = FeaturesMemory(
-        #     num_classes=7,
-        #     feats_channels=512,
-        #     transform_channels=128,
-        #     num_feats_per_cls=1,
-        #     out_channels=512,
-        # )
+        self.memory_module = FeaturesMemory(
+            num_classes=7,
+            feats_channels=512,
+            transform_channels=128,
+            num_feats_per_cls=1,
+            out_channels=512,
+        )
 
         self.fc = nn.Linear(in_features=self._get_layer_size(), out_features=embed_dim, bias=False)
         self.classifier = nn.Linear(in_features=self._get_layer_size(), out_features=embed_dim, bias=False)
